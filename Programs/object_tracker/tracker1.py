@@ -3,7 +3,7 @@ from Programs.object_tracker.tracker import Tracker
 
 def main():
 
-    frames = read_video("C:\\Users\\pardh\\PycharmProjects\\STMS\\Programs\\data\\traffic_video.mp4")
+    frames = read_video("C:\\Users\\pardh\\PycharmProjects\\STMS\\Data\\Video\\traffic3.mp4")
 
 
     obj_tracker = Tracker()
@@ -11,7 +11,7 @@ def main():
 
     output_frames = obj_tracker.draw_annotations(frames, result)
 
-    save_video(output_frames, "C:\\Users\\pardh\\PycharmProjects\\STMS\\output\\output.avi")
+    save_video(output_frames, "C:\\Users\\pardh\\PycharmProjects\\STMS\\Output\\AVI\\output3.avi")
 
 
 if __name__ == '__main__':

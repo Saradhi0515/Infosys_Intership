@@ -11,8 +11,8 @@ class Tracker:
         detections = []
 
         for frame in frames:
-            deteced_objs = self.detect_frame(frame)
-            detections.append(deteced_objs)
+            detected_objs = self.detect_frame(frame)
+            detections.append(detected_objs)
         # for i in range(0, len(frames),5):
         #     frame = frames[i]
         #     detected_objs = self.detect_frame(frame)
@@ -30,7 +30,7 @@ class Tracker:
             result = box.xyxy.tolist()[0]
             object_class_id = box.cls.tolist()[0]
             object_class_name = name_dict[object_class_id]
-            if object_class_name == "truck":
+            if object_class_name in ("bicycle", "car", "motorcycle", "bus", "truck"):
                 dict[track_id] = result
 
         return dict
